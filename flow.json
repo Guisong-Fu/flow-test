@@ -1,0 +1,64 @@
+{
+    "gasLimit": 9999,
+    "emulators": {
+        "default": {
+            "port": 3569,
+            "serviceAccount": "emulator-account"
+        }
+    },
+    "contracts": {
+        "NonFungibleToken": {
+            "source": "./contracts/NonFungibleToken.cdc",
+            "aliases": {
+                "testnet": "0x1d7e57aa55817448"
+            }
+        },
+        "FungibleToken": {
+            "source": "./contracts/FungibleToken.cdc",
+            "aliases": {
+                "testnet": "9a0766d93b6608b7",
+                "emulator": "ee82856bf20e2aa6"
+            }
+        },
+        "FlowToken": {
+            "source": "./contracts/FlowToken.cdc",
+            "aliases": {
+                "testnet": "0x7e60df042a9c0868",
+                "emulator": "0x0ae53cb6e3f42a79"
+            }
+        }
+    },
+    "networks": {
+        "emulator": "127.0.0.1:3569",
+        "mainnet": "access.mainnet.nodes.onflow.org:9000",
+        "testnet": "access.devnet.nodes.onflow.org:9000"
+    },
+    "accounts": {
+        "emulator-account": {
+            "address": "f8d6e0586b0a20c7",
+            "keys": "824f0a340ab9e389380b51e7d0addee9729e0f8eba5fda15cc089e094e70e7b7"
+        },
+        "account2": {
+            "address": "01cf0e2f2f715450",
+            "keys": "a0905b488ab080eeafde3291e9fbe2fb96929a07140e8353103d95b5824cb534"
+        },
+        "testnet-account": {
+            "address": "27292e2145d5bb72",
+            "keys": "3475ea63fa4c30728a97273328073d19e82f9ffa7f1efc4659eb193ead5883f2",
+            "chain": "flow-testnet"
+        },
+        "testnet-account2": {
+            "address": "cab822aba1e89075",
+            "keys": "9afbc2b232d8423b3dbb8ea9dc891c3d9ebbe18931ef787d98a7dd51cc5a5242",
+            "chain": "flow-testnet"
+        }
+    },
+    "deployments": {
+        "emulator": {
+            "emulator-account": [
+                "NonFungibleToken",
+                "FungibleToken"
+            ]
+        }
+    }
+}
